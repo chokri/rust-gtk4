@@ -3,7 +3,7 @@ use gtk::{gio, prelude::*};
 fn main() {
     // Create a new application
     let application = gtk::Application::builder()
-        .application_id("com.github.gtk-rs.examples.menubar")
+        .application_id("com.github.chokri-gtk4-rust")
         .build();
     application.connect_startup(on_startup);
     application.connect_activate(on_activate);
@@ -44,7 +44,7 @@ fn on_startup(app: &gtk::Application) {
 fn on_activate(application: &gtk::Application) {
     let window = gtk::ApplicationWindow::builder()
         .application(application)
-        .title("Menubar Example")
+        .title("GTK4 Rust Demo")
         .default_width(350)
         .default_height(350)
         .show_menubar(true)
