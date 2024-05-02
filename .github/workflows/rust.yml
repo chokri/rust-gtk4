@@ -16,7 +16,7 @@ jobs:
       - name: Update package lists (again)
         run: apt update
       - name: Install dependencies
-        run: apt-get install -y gtk4-dev
+        run: apt-get install -y gtk4-devel
       - uses: actions-rs/cargo@v1
         with:
           command: build
