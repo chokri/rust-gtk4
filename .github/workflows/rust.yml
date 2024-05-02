@@ -11,10 +11,13 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
+      - name: Clear package cache
+        run: apt clean
+      - name: Update package lists (again)
+        run: apt update
       - name: Install dependencies
-        run: sudo apt-get install -y gtk4-dev
+        run: apt-get install -y gtk4-dev
       - uses: actions-rs/cargo@v1
         with:
           command: build
           args: --release --all-features
-
