@@ -5,7 +5,7 @@ name: CI
 jobs:
   build_and_test:
     name: Rust project
-    runs-on: ubuntu-22.04
+    runs-on: ghcr.io/mglolenstine/gtk4-cross:rust-gtk-4.8
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
