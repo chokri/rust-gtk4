@@ -45,8 +45,8 @@ fn on_activate(application: &gtk::Application) {
     let window = gtk::ApplicationWindow::builder()
         .application(application)
         .title("GTK4 Rust Demo")
-        .default_width(350)
-        .default_height(350)
+        .default_width(800)
+        .default_height(600)
         .show_menubar(true)
         .build();
 
