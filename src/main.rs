@@ -1,4 +1,4 @@
-use gtk::{gio, prelude::*};
+use gtk::{gio, prelude::*, Button};
 
 fn main() {
     // Create a new application
@@ -42,6 +42,10 @@ fn on_startup(app: &gtk::Application) {
 }
 
 fn on_activate(application: &gtk::Application) {
+    let button = Button::with_label("Open");
+    button.connect_clicked(|_| {
+        eprint!("Clicked!");
+    });
     let window = gtk::ApplicationWindow::builder()
         .application(application)
         .title("GTK4 Rust Demo")
@@ -49,6 +53,8 @@ fn on_activate(application: &gtk::Application) {
         .default_height(350)
         .show_menubar(true)
         .build();
+
+    window.set_child(Some(&button));
 
     window.present();
 }
